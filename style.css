@@ -1,0 +1,75 @@
+/* Shared by the MyPlant web pages; colors match the app's Theme.Palette. */
+:root {
+  --background: #F4F8F1;
+  --surface: #FFFFFF;
+  --surface-muted: #EAF1E6;
+  --ink: #1B2A21;
+  --ink-secondary: #4E6157;
+  --leaf: #2E8F5D;
+  --leaf-soft: #DDF2E4;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0E1310;
+    --surface: #18201B;
+    --surface-muted: #222C25;
+    --ink: #EAF2EC;
+    --ink-secondary: #A7B8AD;
+    --leaf: #5CC98C;
+    --leaf-soft: #1E3828;
+  }
+}
+:root[data-theme="dark"] {
+  --background: #0E1310;
+  --surface: #18201B;
+  --surface-muted: #222C25;
+  --ink: #EAF2EC;
+  --ink-secondary: #A7B8AD;
+  --leaf: #5CC98C;
+  --leaf-soft: #1E3828;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+main { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+article {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 28px 24px;
+  margin-bottom: 24px;
+}
+.lang { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 16px; }
+.lang a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.eyebrow { margin: 0; color: var(--leaf); font-weight: 700; letter-spacing: .02em; }
+h1 { margin: 4px 0 4px; font-size: 32px; line-height: 1.2; }
+h2 { margin: 32px 0 8px; font-size: 19px; }
+article > h3 { margin: 20px 0 6px; font-size: 16px; }
+.meta { margin: 0 0 20px; color: var(--ink-secondary); font-size: 14px; }
+.lead {
+  background: var(--leaf-soft);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+a { color: var(--leaf); overflow-wrap: anywhere; }
+.faq h3 { margin: 24px 0 4px; font-size: 16px; }
+.faq p { margin: 0; }
+@media (max-width: 480px) {
+  article { padding: 22px 18px; border-radius: 20px; }
+  h1 { font-size: 27px; }
+}
